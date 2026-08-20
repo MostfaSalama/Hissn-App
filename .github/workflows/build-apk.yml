@@ -38,12 +38,15 @@ jobs:
       - name: Generate app icons from logo
         run: npx capacitor-assets generate --android
 
-      - name: Set localized app name (Arabic default / English)
+            - name: Set localized app name (Arabic default / English)
         run: |
           cat > android/app/src/main/res/values/strings.xml <<'EOF'
           <?xml version='1.0' encoding='utf-8'?>
           <resources>
               <string name="app_name">حِصن</string>
+              <string name="title_activity_main">حِصن</string>
+              <string name="package_name">com.hissn.azkar</string>
+              <string name="custom_url_scheme">com.hissn.azkar</string>
           </resources>
           EOF
           mkdir -p android/app/src/main/res/values-en
@@ -51,6 +54,9 @@ jobs:
           <?xml version='1.0' encoding='utf-8'?>
           <resources>
               <string name="app_name">Hissn</string>
+              <string name="title_activity_main">Hissn</string>
+              <string name="package_name">com.hissn.azkar</string>
+              <string name="custom_url_scheme">com.hissn.azkar</string>
           </resources>
           EOF
 
